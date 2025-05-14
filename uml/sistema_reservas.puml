@@ -1,0 +1,25 @@
+@startuml
+class Usuario {
+    - nombre: str
+    - correo: str
+}
+
+class Sala {
+    - nombre: str
+    - capacidad: int
+}
+
+class Reserva {
+    - fecha: str
+    - hora_inicio: str
+    - hora_fin: str
+}
+
+class ClienteVIP {
+    - puntos: int
+}
+
+Usuario "1" --> "*" Reserva : hace
+Sala "1" --> "*" Reserva : en
+Usuario <|-- ClienteVIP
+@enduml
